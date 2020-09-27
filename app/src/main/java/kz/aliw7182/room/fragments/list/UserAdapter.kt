@@ -3,10 +3,11 @@ package kz.aliw7182.room.fragments.list
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_user.view.*
 import kz.aliw7182.room.R
-import kz.aliw7182.room.data.User
+import kz.aliw7182.room.model.User
 
 class UserAdapter: RecyclerView.Adapter<UserViewHolder>() {
     private var userList = emptyList<User>()
@@ -21,6 +22,10 @@ return UserViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_
         holder.itemView.item_name.text = currentItem.firstName
         holder.itemView.item_lastname.text = currentItem.lastName
         holder.itemView.item_age.text = currentItem.age.toString()
+        holder.itemView.root_items.setOnClickListener {
+            val action = ListFragmentDirections.actionListFragmentToUpdateFragment(currentItem)
+            holder.itemView.findNavController().navigate(action)
+        }
     }
 
 

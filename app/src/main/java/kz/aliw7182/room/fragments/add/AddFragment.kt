@@ -8,15 +8,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.get
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 import kz.aliw7182.room.R
-import kz.aliw7182.room.data.User
-import kz.aliw7182.room.data.UserViewModel
+import kz.aliw7182.room.model.User
+import kz.aliw7182.room.viewmodel.UserViewModel
 
 class AddFragment : Fragment() {
     private lateinit var mUserViewModel: UserViewModel
